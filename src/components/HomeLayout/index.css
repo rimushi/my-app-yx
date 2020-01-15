@@ -1,0 +1,27 @@
+.login {
+	background: green;
+}
+.main-outter {
+	background: blue;
+}
+.main-sidebar {
+	position: fixed;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    background: #F5F5F5;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 250px !important;
+}
+.ant-layout-content {
+	box-sizing: border-box;	
+	position: absolute;
+    width: auto;
+    top: 80px;  
+    right: 0;
+    bottom: 0;
+    left: 250px;
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
