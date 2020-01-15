@@ -43,7 +43,9 @@ const imageInlineSizeLimit = parseInt(
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // style files regexes
-const cssRegex = /\.css$/;
+// const cssRegex = /\.css|\.less$/;
+
+const cssRegex = /\.(css|less)$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
@@ -89,6 +91,9 @@ module.exports = function(webpackEnv) {
       {
         loader: require.resolve('css-loader'),
         options: cssOptions,
+      },
+      {
+        loader: require.resolve('less-loader') // compiles Less to CSS
       },
       {
         // Options for PostCSS as we reference these options twice
@@ -324,6 +329,16 @@ module.exports = function(webpackEnv) {
     module: {
       strictExportPresence: true,
       rules: [
+        // {
+        //   test: /\.less$/,
+        //   use: [{
+        //     loader: 'style-loader',
+        //   }, {
+        //     loader: 'css-loader', // translates CSS into CommonJS
+        //   }, {
+        //     loader: 'less-loader', // compiles Less to CSS
+        //   }]
+        // },
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
 
