@@ -19,7 +19,14 @@ class Page18 extends Component {
     render() {
         return (
             <div>
-               <div class="widget"></div>
+               <div class="wrap1">
+                   <div class="navigation1"></div>
+                   <div class="logo1"></div>
+               </div>
+               <div class="wrap2">
+                   <div class="navigation2"></div>
+                   <div class="logo2"></div>
+               </div>
             </div>
         )
     }
