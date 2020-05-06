@@ -144,7 +144,7 @@ class Nav extends Component {
                   <NavLink to="/page2"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", marginLeft:"20px"}}>
                      表单
                   </NavLink>
-              </Menu.Item>
+              </Menu.Item>             
               <Menu.Item key="3">
                   <NavLink to="/page3"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", marginLeft:"20px"}}>
                      树形
@@ -194,7 +194,17 @@ class Nav extends Component {
                   <NavLink to="/page11"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", fontSize:"12px", marginLeft:"20px"}}>
                      shouldComponentUpdate进行优化
                   </NavLink>
-              </Menu.Item>                          
+              </Menu.Item>  
+               <Menu.Item key="14">
+                  <NavLink to="/demo1"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", marginLeft:"20px"}}>
+                      react-redux-demo1(数字加减)
+                  </NavLink>
+              </Menu.Item>
+              <Menu.Item key="15">
+                  <NavLink to="/demo2"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", marginLeft:"20px"}}>
+                     react-redux-demo2(字符串追加)
+                  </NavLink>
+              </Menu.Item>                        
             </SubMenu>
           </Menu>
         </div> 

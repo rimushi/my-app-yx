@@ -51,6 +51,7 @@ class Page4 extends Component {
               <RangePicker onChange={onChange} />
           </div>  
 
+
           <div>
               {/* defaultValue默认日期  format设置日期格式 不设置的话就按默认格式YYYY-MM-DD显示 
                下面的两处设置了日期格式，后者可以覆盖前者*/}
@@ -63,6 +64,7 @@ class Page4 extends Component {
                 format={dateFormat}
               />
           </div>  
+          
           <div>
               <TimePicker value={this.state.value} onChange={this.onChange} />
           </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //高阶组件中的withRouter, 作用是将一个组件包裹进Route里面, 
 // 然后react-router的三个对象history, location, match就会被放进这个组件的props属性中.
-import {withRouter} from 'react-router-dom'
+// import {withRouter} from 'react-router-dom'
 import {Form, Icon, Input, Button, Checkbox} from 'antd';
 import './index.css'
 
@@ -72,5 +72,15 @@ class Login extends Component {
 
 //经过Form.create()包装过的组件会自带this.props.form属性，
 //this.props.form提供了很多API来处理数据，如getFieldDecorator——用于和表单进行双向绑定等
+export default Form.create()(Login)
+
+
+// 默认情况下必须经过路由匹配渲染的组件才存在this.props,才拥有路由参数，
+// 然而不是所有组件都直接与路由相连（通过路由跳转到此组件）的,，
+// 当这些组件需要路由参数时，使用withRouter就可以给此组件传入路由参数，
+// 将react-router的history、location、match三个对象传入props对象上，此时就可以使用this.props。
+
+// 因为我们这个项目 app.js就是一个包裹的路由组件，所以所有组件包裹成了路由组件，
+// 就不需要再单独使用withRouter
 // export default Form.create()(withRouter(Login))
-export default withRouter(Form.create()(Login))
+// export default withRouter(Form.create()(Login))

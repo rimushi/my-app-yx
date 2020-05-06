@@ -13,7 +13,7 @@ class Child extends Component {
       return (
         <div>
             <h1>父组件的值  {this.props.bgColor}</h1>
-            <button onClick={(e)=>this.handleClick(e)}>改变父组件颜色</button> 
+            <button onClick={()=>this.handleClick()}>改变父组件颜色</button> 
         </div>
       )
     }  

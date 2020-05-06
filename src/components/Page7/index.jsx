@@ -11,9 +11,9 @@ import './index.css'
 
 const plainOptions = ['Apple', 'Pear', 'Orange']; 
 const optionsWithDisabled = [
-  { label: 'Apple', value: 'Apple' },
-  { label: 'Pear', value: 'Pear' },
-  { label: 'Orange', value: 'Orange', disabled: false },
+  { label: 'Apple', value: '1' },
+  { label: 'Pear', value: '2' },
+  { label: 'Orange', value: '3', disabled: false },
 ];
 
 class Page7 extends Component { 
@@ -33,7 +33,7 @@ class Page7 extends Component {
           <Checkbox.Group options={plainOptions} defaultValue={['Apple']}/>          
             <br />
             <br />
-          <Checkbox.Group options={optionsWithDisabled} defaultValue={['Pear']} />        
+          <Checkbox.Group options={optionsWithDisabled} defaultValue={['2']} />        
             <br />
             <br />
 

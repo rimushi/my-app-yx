@@ -14,6 +14,9 @@ class Page9 extends Component {
   render() {
     return (
       <div>
+        {/* active 是否展示动画效果
+            avatar 是否显示头像占位图 
+            paragraph  是否显示段落占位图 */}
         <Skeleton active avatar paragraph={{ rows: 4 }} />
 
         {/*标签页*/}

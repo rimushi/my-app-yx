@@ -26,7 +26,7 @@ class Page18 extends Component {
                <div class="wrap2">
                    <div class="navigation2"></div>
                    <div class="logo2"></div>
-               </div>
+               </div>               
             </div>
         )
     }

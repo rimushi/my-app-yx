@@ -21,6 +21,8 @@ import Page15  from '.././components/Page15'
 import Page16  from '.././components/Page16'
 import Page17  from '.././components/Page17'
 import Page18  from '.././components/Page18'
+import Demo1  from '.././components/Demo1'
+import Demo2  from '.././components/Demo2'
 import HomeLayout  from '.././components/HomeLayout'
 
 export default class RouteConfig extends Component {
@@ -52,7 +54,9 @@ export default class RouteConfig extends Component {
                             <Route path="/page15" component={Page15}/>
                             <Route path="/page16" component={Page16}/> 
                             <Route path="/page17" component={Page17}/>
-                            <Route path="/page18" component={Page18}/>              
+                            <Route path="/page18" component={Page18}/> 
+                            <Route path="/demo1" component={Demo1}/>
+                            <Route path="/demo2" component={Demo2}/>              
                         </div>
                     </HomeLayout>
                     <Redirect to="/" />

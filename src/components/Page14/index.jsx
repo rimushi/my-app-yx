@@ -11,6 +11,7 @@ class Page14 extends Component {
   // 用于替换 `componentWillReceiveProps` ，该函数会在初始化和 `update` 时被调用
   // 因为该函数是静态函数，所以取不到 `this`
   // 如果需要对比 `prevProps` 需要单独在 `state` 中维护
+  // 表示“从props中获取state”和“传入的props映射到state上面”
   static getDerivedStateFromProps(nextProps, prevState) {}
   // 判断是否需要更新组件，多用于组件性能优化
   shouldComponentUpdate(nextProps, nextState) {}

@@ -18,6 +18,7 @@ class Page5 extends Component {
   };
   
   onSearch = searchText => {
+    //repeat()方法返回一个新字符串，表示将原字符串重复n次,这里用来模拟数据
     this.setState({
       dataSource: !searchText ? [] : [searchText, searchText.repeat(2), searchText.repeat(3)],
     });

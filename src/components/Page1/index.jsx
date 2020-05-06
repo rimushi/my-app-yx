@@ -70,6 +70,7 @@ class Page1 extends Component {
   render() {  
     const { selectedRowKeys } = this.state;
     const rowSelection = {
+      //来控制选中项
       selectedRowKeys,
       onChange: this.onSelectChange,
     };
