@@ -84,3 +84,5 @@ export default Form.create()(Login)
 // 就不需要再单独使用withRouter
 // export default Form.create()(withRouter(Login))
 // export default withRouter(Form.create()(Login))
+
+//备注这里Form.create()的是antd 3.x.x的是用方式，最新4.x.x已经不这么用

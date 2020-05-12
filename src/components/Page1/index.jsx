@@ -16,7 +16,7 @@ class Page1 extends Component {
   state = {
     selectedRowKeys: []
   };
-  
+  //组件挂载后
   componentDidMount() {   
     this.setState ({
       dataSource:  [
@@ -67,6 +67,7 @@ class Page1 extends Component {
     console.log('selectedRowKeys changed: ', selectedRowKeys);
     this.setState({ selectedRowKeys });
   }; 
+  //渲染组件函数
   render() {  
     const { selectedRowKeys } = this.state;
     const rowSelection = {

@@ -187,7 +187,8 @@ class Page extends Component {
               <span onClick={()=>this.showModal(record)} className="operate-txt" >编辑</span> 
               {/*注释 传参 这里用bind,是因为bind会延迟执行，这个语句等同上一句}
               {/*<span onClick={this.showModal.bind(this,record)} className="operate-txt" >编辑</span>*/}
-              <Divider type="vertical" />             
+              <Divider type="vertical" />     
+              {/*这里跳到新的路由上*/}        
               <Link to={`/page/${record.key}`}>详情</Link>
               <Divider type="vertical" />
               <span onClick={()=>this.showDeleteConfirm(record.key)} className="operate-txt" >删除</span>

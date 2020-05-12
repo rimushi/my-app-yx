@@ -45,10 +45,14 @@ const useTypeScript = fs.existsSync(paths.appTsConfig);
 // style files regexes
 // const cssRegex = /\.css|\.less$/;
 
-const cssRegex = /\.(css|less)$/;
+const cssRegex = /\.(css)$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+
+//配置less
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -92,9 +96,9 @@ module.exports = function(webpackEnv) {
         loader: require.resolve('css-loader'),
         options: cssOptions,
       },
-      {
-        loader: require.resolve('less-loader') // compiles Less to CSS
-      },
+      // {
+      //   loader: require.resolve('less-loader') // compiles Less to CSS
+      // },
       {
         // Options for PostCSS as we reference these options twice
         // Adds vendor prefixing based on your specified browser support in
@@ -501,6 +505,23 @@ module.exports = function(webpackEnv) {
                   },
                 },
                 'sass-loader'
+              ),
+            },
+            //配置less
+            {
+              test: lessRegex,
+              exclude: lessModuleRegex,
+              use: getStyleLoaders({ importLoaders: 2 }, 'less-loader'),
+            },
+            {
+              test: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  modules: true,
+                  getLocalIdent: getCSSModuleLocalIdent,
+                },
+                'less-loader'
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.

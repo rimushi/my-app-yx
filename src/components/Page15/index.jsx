@@ -77,7 +77,7 @@ const Form2 = Form.create()(MySecondForm);
 
 
 class Page15 extends React.Component{
-  reset = () => {  
+  reset = () => {   
     this.form1.props.form.resetFields();
     this.form2.props.form.resetFields();
   };
@@ -99,7 +99,8 @@ class Page15 extends React.Component{
     )
   }
 }
-
+ 
+//经过 Form.create 之后如果要拿到 ref，可以使用 rc-form 提供的 wrappedComponentRef
 
 export default Page15;
 // 经过 Form.create 包装的组件将会自带 this.props.form 属性，this.props.form 提供的 API 如下：

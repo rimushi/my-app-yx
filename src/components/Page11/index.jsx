@@ -3,14 +3,14 @@ import './index.css'
 
 //子组件
 class Son extends Component {
-
-  shouldComponentUpdate(nextProps, nextState) {
-    //只有当名字不一样的时候才会继续执行更新, 执行render
-    if (nextProps.son !== this.props.son) {
-      return true
-    }
-    return false
-  }
+  // 判断是否需要更新组件，多用于组件性能优化
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   //只有当名字不一样的时候才会继续执行更新, 执行render
+  //   if (nextProps.son !== this.props.son) {
+  //     return true
+  //   }
+  //   return false
+  // }
 
   render() {
     console.log("--son--render----")
@@ -26,7 +26,8 @@ class Page11 extends Component {
     son: 2
   }
   componentDidMount() {
-    let i = 1;
+    let i = 10;
+    // let i = 11;
     setInterval(() => {
       if (i % 5 === 0) {
         console.log("-------------------------", i)
@@ -43,8 +44,12 @@ class Page11 extends Component {
       i++
     }, 1 * 1000)
   }
+
+  // 判断是否需要更新组件，多用于组件性能优化
   shouldComponentUpdate(nextProps, nextState) {
-    if (nextState.name !== this.state.name) {
+    // if (nextState.name !== this.state.name) {
+    //哪怕值改变了，但是我们这里设置了false，照样会不执行
+    if (nextState.name === this.state.name) {
       return true
     }
     return false

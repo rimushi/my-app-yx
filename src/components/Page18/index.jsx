@@ -20,12 +20,14 @@ class Page18 extends Component {
         return (
             <div>
                <div class="wrap1">
-                   <div class="navigation1"></div>
+                   <div class="head1"></div>
                    <div class="logo1"></div>
+                   <div class="wrap1-foot1"></div>
                </div>
                <div class="wrap2">
-                   <div class="navigation2"></div>
+                   <div class="head2"></div>
                    <div class="logo2"></div>
+                   <div class="wrap2-foot2"></div>
                </div>               
             </div>
         )

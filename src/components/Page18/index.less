@@ -1,4 +1,5 @@
 /*变量和运算*/
+/*常用，变量前面要有@符号*/
 @width: 200px;
 @height: @width + 100px;
 @bgcolor: blue;
@@ -9,23 +10,25 @@
   background: @bgcolor;
 }
 
-/*混合
+/*混合*/ 
+/*常用*/
+/*场景当有公共的样式需要抽离，方便以后多个地方调用的时候*/
 .bordered {
-  border: solid 5px black;
+  border: solid 5px yellow;
 }
 .logo1 {
   color: #111;
   .bordered();
-}*/
+}
 
 
-/*嵌套  其中&表示当前选择器的父级 */
-
+/*嵌套  其中&表示当前选择器的父级 *//*常用*/
+/* 层级关系更清晰 也方便编写*/
 .wrap2 {
   color: black;
   width: 200px;
   height: 200px;
-  .navigation2 {
+  .head2 {
     font-size: 12px;
   }
   .logo2 {
@@ -33,6 +36,7 @@
   }
 }
 
+/*less中伪类需要加&符号*/
 .clearfix {
   display: block;
   zoom: 1;
@@ -55,32 +59,40 @@
   color: saturate(#f04615, 5%);
 }
 
-/*命名空间和访问符/*
-#bundle() {
+/*命名空间和访问符 命名空间调用的定义的时候 前面有#号后面跟着（）*/
+/*当公共部门也存在同异需要区分的时候*/
+#nameSpace() {
   .button {
     display: block;
-    border: 1px solid black;
-    background-color: grey;
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    background-color: red;
+    margin-top: 25px;
     &:hover {
       background-color: white;
     }
   } 
 }
 
-#header a {
-  color: orange;
-  #bundle.button();  // 还可以书写为 #bundle > .button 形式
+.logo2 {
+  #nameSpace > .button; // 还可以书写为 #bundle.button()形式
 }
 
-/*映射（Maps）*/
+/*映射（Maps）加入了规则集的概念，
+定的时候映射里面的集合，命名空间里面是具体的样式
+所以调用的时候也不大一样*/
+/*当某个样式的具体设置参数
+存在对应关系的时候*/
+/*偶尔*/
 #colors() {
-  primary: blue;
-  secondary: green;
+  first: blue;
+  second: green;
 }
 
-.button {
-  color: #colors[primary];
-  border: 1px solid #colors[secondary];
+.head2 {
+  color: #colors[first];
+  border: 1px solid #colors[second];
 }
 
 /*作用域*/
@@ -93,5 +105,42 @@
     color: @var; 
   }
 }
+
+/*=============less中&的使用 开始============*/
+
+//只是连接
+.wrap1 {
+  &-foot1 {
+    margin-top: 260px;
+    height: 30px;
+    background: green;;
+  }
+}
+// .wrap1-foot1 {}
+
+
+//嵌套加连接
+.wrap1 {
+  & &-foot1 {
+    margin-top: 260px;
+    height: 30px;
+    background: green;
+  }
+}
+// .wrap1 .wrap1-foot1 {}
+
+
+//反转嵌套 &符号放到后面
+.wrap1-foot1 {
+  .wrap1 & {
+    margin-top: 260px;
+    height: 30px;
+    background: green;
+  }
+}
+// .wrap1 .wrap1-foot1 {}
+
+/*============less中&的使用 结束=========*/
+
 
 /*更多less用法请参见 https://less.bootcss.com/#-variables */

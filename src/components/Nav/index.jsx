@@ -76,13 +76,13 @@ class Nav extends Component {
        
           <Menu
             onClick={this.handleClick}
-            style={{ width: 256 }}
+            style={{ width: 450 }}
             defaultSelectedKeys={['2']}
             defaultOpenKeys={['1','4']}
             mode="inline"
           >  
             <SubMenu
-              key="1"
+              key="1"              
               title={
                 <span>
                   <Icon type="appstore" />
@@ -115,11 +115,11 @@ class Nav extends Component {
                      flex的使用
                   </NavLink>
               </Menu.Item>
-              <Menu.Item key="17">
+              {/*<Menu.Item key="17">
                   <NavLink to="/page17"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", fontSize:"12px", marginLeft:"20px"}}>
-                     引入D3
+                     引入D3(引入react-redux后影响了这个使用，后续有时间看看)
                   </NavLink>
-              </Menu.Item>
+              </Menu.Item>*/}
               <Menu.Item key="18">
                   <NavLink to="/page18"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", fontSize:"12px", marginLeft:"20px"}}>
                       less的使用
@@ -192,17 +192,22 @@ class Nav extends Component {
               </Menu.Item>
               <Menu.Item key="11">
                   <NavLink to="/page11"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", fontSize:"12px", marginLeft:"20px"}}>
-                     shouldComponentUpdate进行优化
+                     生命周期shouldComponentUpdate的使用
+                  </NavLink>
+              </Menu.Item> 
+               <Menu.Item key="16">
+                  <NavLink to="/page19"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", fontSize:"12px", marginLeft:"20px"}}>
+                     生命周期componentDidUpdate的使用
                   </NavLink>
               </Menu.Item>  
                <Menu.Item key="14">
                   <NavLink to="/demo1"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", marginLeft:"20px"}}>
-                      react-redux-demo1(数字加减)
+                      react-redux(数字加减)
                   </NavLink>
               </Menu.Item>
               <Menu.Item key="15">
                   <NavLink to="/demo2"  activeStyle={{ fontWeight: 'bold' }} style={{float:"left", marginLeft:"20px"}}>
-                     react-redux-demo2(字符串追加)
+                     react-redux(字符串追加)
                   </NavLink>
               </Menu.Item>                        
             </SubMenu>

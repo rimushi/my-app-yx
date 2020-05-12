@@ -1,6 +1,7 @@
 // import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createStore, combineReducers } from 'redux';
 // import thunk from 'redux-thunk'
+// 中间件都是对store.dispatch()的增强,可以在reducer中进行一些异步的操作
 
 //备注如果引用的模块有exploer default 则氪直接赋给一个值，
 // 如果没有default则需要罗列出来引用了那些， 如果引用全部则 * as 新名字
